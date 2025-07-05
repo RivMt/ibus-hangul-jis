@@ -58,3 +58,6 @@ src/test.sh
 src/hangul.xml
 src/hangul.xml.in
 src/ibus-engine-hangul
+
+# VS Code
+.vscode/
