@@ -1,6 +1,6 @@
 # vim:set noet ts=4:
 #
-# ibus-hangul - The Hangul engine for IBus
+# ibus-hangul-jis - The Hangul engine for IBus
 #
 # Copyright (c) 2007-2008 Huang Peng <shawn.p.huang@gmail.com>
 #
@@ -46,7 +46,7 @@ libinternal_a_CFLAGS = \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	-DLOCALEDIR=\"$(localedir)\" \
 	-DLIBEXECDIR=\"$(libexecdir)\" \
-	-DIBUSHANGUL_DATADIR=\"$(datadir)/ibus-hangul\" \
+	-DIBUSHANGUL_DATADIR=\"$(datadir)/ibus-hangul-jis\" \
 	$(NULL)
 
 check_PROGRAMS = \
@@ -57,40 +57,40 @@ TESTS = \
 	$(check_PROGRAMS) \
 	$(NULL)
 
-libexec_PROGRAMS = ibus-engine-hangul
+libexec_PROGRAMS = ibus-engine-hangul-jis
 
-ibus_engine_hangul_SOURCES = \
+ibus_engine_hangul_jis_SOURCES = \
 	main.c \
 	$(NULL)
 
-ibus_engine_hangul_CFLAGS = \
+ibus_engine_hangul_jis_CFLAGS = \
 	@IBUS_CFLAGS@ \
 	@HANGUL_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	-DLOCALEDIR=\"$(localedir)\" \
 	-DLIBEXECDIR=\"$(libexecdir)\" \
-	-DIBUSHANGUL_DATADIR=\"$(datadir)/ibus-hangul\" \
+	-DIBUSHANGUL_DATADIR=\"$(datadir)/ibus-hangul-jis\" \
 	$(NULL)
 
-ibus_engine_hangul_LDADD = \
+ibus_engine_hangul_jis_LDADD = \
 	libinternal.a \
 	@IBUS_LIBS@ \
 	@HANGUL_LIBS@ \
 	$(NULL)
 
 component_DATA = \
-	hangul.xml \
+	hanguljis.xml \
 	$(NULL)
-componentdir = @datadir@/ibus/component
+componentdir = $(datadir)/ibus/component
 
 EXTRA_DIST = \
 	$(NULL)
 
 CLEANFILES = \
-	hangul.xml \
+	hanguljis.xml \
 	$(NULL)
 
-hangul.xml: hangul.xml.in
+hanguljis.xml: hanguljis.xml.in
 	( \
 		libexecdir=${libexecdir}; \
 		pkgdatadir=${pkgdatadir}; \
@@ -98,8 +98,8 @@ hangul.xml: hangul.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: ibus-engine-hangul
-	$(builddir)/ibus-engine-hangul
+test: ibus-engine-hangul-jis
+	$(builddir)/ibus-engine-hangul-jis
 
 test_ustring_CFLAGS = $(IBUS_CFLAGS) $(HANGUL_CFLAGS)
 test_ustring_LDADD = $(IBUS_LIBS)

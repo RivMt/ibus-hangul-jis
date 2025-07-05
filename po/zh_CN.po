@@ -38,11 +38,11 @@ msgid ""
 "Hangul engine settings cannot be saved."
 msgstr ""
 
-#: ../setup/ibus-setup-hangul.desktop.in.h:1
+#: ../setup/ibus-setup-hangul-jis.desktop.in.h:1
 msgid "IBus Hangul Preferences"
 msgstr ""
 
-#: ../setup/ibus-setup-hangul.desktop.in.h:2
+#: ../setup/ibus-setup-hangul-jis.desktop.in.h:2
 msgid "Set IBus Hangul Preferences"
 msgstr ""
 

@@ -1,0 +1,30 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<!-- filename: hanguljis.xml -->
+<component>
+	<name>org.freedesktop.IBus.HangulJIS</name>
+	<description>Korean Component (JIS)</description>
+	<exec>${libexecdir}/ibus-engine-hangul-jis --ibus</exec>
+	<version>@VERSION@</version>
+	<author>Peng Huang &lt;shawn.p.huang@gmail.com&gt;</author>
+	<license>GPL</license>
+	<homepage>https://github.com/RivMt/ibus-hangul-jis</homepage>
+	<textdomain>ibus-hangul-jis</textdomain>
+
+	<engines>
+		<engine>
+			<name>hangul-jis</name>
+			<language>ko</language>
+			<license>GPL</license>
+			<author>Peng Huang &lt;shawn.p.huang@gmail.com&gt;</author>
+			<icon>ibus-hangul-jis</icon>
+			<layout>jp</layout>
+			<layout_variant>jp109</layout_variant>
+			<longname>Hangul (JIS)</longname>
+			<description>Korean Input Method for JIS layout keyboards</description>
+			<rank>99</rank>
+			<symbol>&#xD55C;</symbol>
+			<setup>${libexecdir}/ibus-setup-hangul-jis</setup>
+		</engine>
+	</engines>
+
+</component>

@@ -1,6 +1,6 @@
 # vim:set noet ts=4:
 #
-# ibus-hangul - The Hangul engine for IBus
+# ibus-hangul-jis - The Hangul engine for IBus compatible with JIS layout keyboards.
 #
 # Copyright (c) 2019 Peng Wu <alexepico@gmail.com>
 #
@@ -19,7 +19,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 TESTS = \
-    ibus-hangul \
+    ibus-hangul-jis \
     $(NULL)
 
 CLEANFILES = $(test_metas)
@@ -41,16 +41,16 @@ LOG_COMPILER = $(srcdir)/runtest
 test_metas_in = meta.test.in
 
 if ENABLE_INSTALLED_TESTS
-test_execs = ibus-hangul
+test_execs = ibus-hangul-jis
 test_metas = $(addsuffix .test, $(test_execs))
 test_sources_DATA = $(test_metas)
-test_sourcesdir = $(datadir)/installed-tests/ibus-hangul
+test_sourcesdir = $(datadir)/installed-tests/ibus-hangul-jis
 test_execs_PROGRAMS = $(TESTS)
-test_execsdir = $(libexecdir)/installed-tests/ibus-hangul
+test_execsdir = $(libexecdir)/installed-tests/ibus-hangul-jis
 endif
 
-ibus_hangul_SOURCES = ibus-hangul.c
-ibus_hangul_CFLAGS = \
+ibus_hangul_jis_SOURCES = ibus-hangul.c
+ibus_hangul_jis_CFLAGS = \
         @IBUS_CFLAGS@ \
         @HANGUL_CFLAGS@ \
         @GTK_CFLAGS@ \
@@ -59,10 +59,10 @@ ibus_hangul_CFLAGS = \
         -DPKGDATADIR=\"$(pkgdatadir)\" \
         -DLOCALEDIR=\"$(localedir)\" \
         -DLIBEXECDIR=\"$(libexecdir)\" \
-        -DIBUSHANGUL_DATADIR=\"$(datadir)/ibus-hangul\" \
+        -DIBUSHANGUL_DATADIR=\"$(datadir)/ibus-hangul-jis\" \
         $(NULL)
 
-ibus_hangul_LDADD = \
+ibus_hangul_jis_LDADD = \
         ../src/libinternal.a \
         @IBUS_LIBS@ \
         @HANGUL_LIBS@ \

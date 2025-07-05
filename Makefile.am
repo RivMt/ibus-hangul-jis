@@ -1,6 +1,6 @@
 # vim:set noet ts=4:
 #
-# ibus-hangul - The Hangul engine for IBus
+# ibus-hangul-jis - The Hangul engine for IBus compatible with JIS layout keyboards.
 #
 # Copyright (c) 2007-2008 Huang Peng <shawn.p.huang@gmail.com>
 #
@@ -32,7 +32,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST = \
 	autogen.sh \
-	ibus-hangul.spec.in \
+	ibus-hangul-jis.spec.in \
 	$(NULL)
 
 noinst_DIST = \

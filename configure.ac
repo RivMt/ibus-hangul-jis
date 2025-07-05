@@ -1,6 +1,6 @@
 # vim:set et ts=4:
 #
-# ibus-hangul - The Hangul engine for IBus
+# ibus-hangul-jis - The Hangul engine for IBus compatible with JIS layout keyboards.
 #
 # Copyright (c) 2007-2008 Huang Peng <shawn.p.huang@gmail.com>
 #
@@ -29,9 +29,9 @@ m4_define(ibus_maybe_datestamp,
 m4_define([ibus_version],
     ibus_major_version.ibus_minor_version.ibus_micro_version[]ibus_maybe_datestamp)
 
-AC_INIT([ibus-hangul], [ibus_version], [https://github.com/libhangul/ibus-hangul/issues],[ibus-hangul])
+AC_INIT([ibus-hangul-jis],[ibus_version],[https://github.com/RivMt/ibus-hangul-jis/issues],[ibus-hangul-jis])
 AM_INIT_AUTOMAKE([1.10 no-dist-gzip dist-xz])
-AC_GNU_SOURCE
+AC_USE_SYSTEM_EXTENSIONS
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
@@ -47,8 +47,16 @@ AM_PROG_CC_C_O
 AC_PROG_CXX
 AC_PROG_LN_S
 AC_PROG_MKDIR_P
-AC_ISC_POSIX
-AC_HEADER_STDC
+AC_SEARCH_LIBS([strerror],[cposix])
+m4_warn([obsolete],
+[The preprocessor macro `STDC_HEADERS' is obsolete.
+  Except in unusual embedded environments, you can safely include all
+  ISO C90 headers unconditionally.])dnl
+# Autoupdate added the next two lines to ensure that your configure
+# script's behavior did not change.  They are probably safe to remove.
+AC_CHECK_INCLUDES_DEFAULT
+AC_PROG_EGREP
+
 AM_PROG_LIBTOOL
 
 AM_GNU_GETTEXT_VERSION([0.19.8])
@@ -105,9 +113,9 @@ fi
 AC_CONFIG_FILES([
 po/Makefile.in
 Makefile
-ibus-hangul.spec
+ibus-hangul-jis.spec
 src/Makefile
-src/hangul.xml.in
+src/hanguljis.xml.in
 tests/Makefile
 setup/Makefile
 icons/Makefile

@@ -1,6 +1,6 @@
 # vim:set et sts=4 sw=4:
 #
-# ibus-hangul - The Hangul Engine For IBus
+# ibus-hangul-jis - The Hangul Engine For IBus
 #
 # Copyright (c) 2009-2011 Choe Hwanjin <choe.hwanjin@gmail.com>
 #
@@ -57,7 +57,7 @@ def get_hangul_keyboard_list():
 class Setup ():
     def __init__ (self, bus):
         self.__bus = bus
-        self.__settings = Gio.Settings(schema="org.freedesktop.ibus.engine.hangul")
+        self.__settings = Gio.Settings(schema="org.freedesktop.ibus.engine.hanguljis")
         self.__settings.connect("changed", self.on_value_changed)
 
         ui_file = os.path.join(os.path.dirname(__file__), "setup.ui")
@@ -296,8 +296,8 @@ class Setup ():
 if __name__ == "__main__":
     locale.bindtextdomain(config.gettext_package, config.localedir)
 
-    GLib.set_prgname("ibus-setup-hangul")
-    GLib.set_application_name(_("IBusHangul Setup"))
+    GLib.set_prgname("ibus-setup-hangul-jis")
+    GLib.set_application_name(_("IBusHangul (JIS) Setup"))
 
     bus = IBus.Bus()
     if bus.is_connected():

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=IBus Hangul (JIS) Preferences
+Comment=Set IBus Hangul (JIS) Preferences
+Exec=ibus-setup-hangul-jis
+Icon=ibus-setup-hangul-jis
+NoDisplay=true
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Settings;

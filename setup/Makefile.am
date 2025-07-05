@@ -1,6 +1,6 @@
 # vim:set noet ts=4:
 #
-# ibus-hangul - The Hangul Engine For IBus
+# ibus-hangul-jis - The Hangul Engine For IBus
 #
 # Copyright (c) 2009 Choe Hwanjin <choe.hwanjin@gmail.com>
 #
@@ -28,9 +28,9 @@ nodist_setup_hangul_PYTHON = config.py
 
 setup_hanguldir = $(pkgdatadir)/setup
 
-libexec_SCRIPTS = ibus-setup-hangul
+libexec_SCRIPTS = ibus-setup-hangul-jis
 
-desktop_in_files = ibus-setup-hangul.desktop.in
+desktop_in_files = ibus-setup-hangul-jis.desktop.in
 desktop_files = $(desktop_in_files:.desktop.in=.desktop)
 desktop_DATA = $(desktop_files)
 desktopdir = $(datadir)/applications
@@ -45,16 +45,16 @@ hicolor_icon_scalable_DATA = ibus-setup-hangul.svg
 hicolor_icon_scalabledir = $(datadir)/icons/hicolor/scalable/apps
 
 CLEANFILES = \
-	ibus-setup-hangul \
+	ibus-setup-hangul-jis \
 	config.py \
 	*.pyc \
-	ibus-setup-hangul.desktop \
+	ibus-setup-hangul-jis.desktop \
 	$(NULL)
 
 EXTRA_DIST = \
 	config.py.in \
-	ibus-setup-hangul.in \
-	ibus-setup-hangul.desktop.in \
+	ibus-setup-hangul-jis.in \
+	ibus-setup-hangul-jis.desktop.in \
 	$(hicolor_icon_64_DATA) \
 	$(hicolor_icon_scalable_DATA) \
 	$(NULL)
@@ -69,14 +69,14 @@ config.py: config.py.in Makefile
 	    -e 's&@SETUP_LOCALEDIR@&$(localedir)&g' \
 	    -e 's&@SETUP_PKGDATADIR@&$(pkgdatadir)&g' $< > $@
 
-ibus-setup-hangul: ibus-setup-hangul.in config.py Makefile
+ibus-setup-hangul-jis: ibus-setup-hangul-jis.in config.py Makefile
 	sed -e 's&@SETUP_PKGDATADIR@&$(pkgdatadir)&g' \
 	    -e 's&\@PYTHON\@&$(PYTHON)&g' $< > $@
 
 install-exec-hook:
 	$(MKDIR_P) $(DESTDIR)$(bindir)
 	cd $(DESTDIR)$(bindir) && \
-	rm -f ibus-setup-hangul && \
+	rm -f ibus-setup-hangul-jis && \
 	a="$(bindir)"; b="$(libexecdir)"; updir=""; downdir=""; \
 	while test "$$a" != "$$b"; do \
 		bbase=`basename $$b`; \
@@ -84,7 +84,7 @@ install-exec-hook:
 		downdir="$$bbase/$$downdir"; \
 		a=`dirname $$a`; b=`dirname $$b`; \
 	done; \
-	$(LN_S) $$updir$${downdir}ibus-setup-hangul ibus-setup-hangul
+	$(LN_S) $$updir$${downdir}ibus-setup-hangul-jis ibus-setup-hangul-jis
 
 uninstall-hook:
-	cd "$(DESTDIR)$(bindir)" && rm -f ibus-setup-hangul
+	cd "$(DESTDIR)$(bindir)" && rm -f ibus-setup-hangul-jis

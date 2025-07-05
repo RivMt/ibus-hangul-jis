@@ -2,7 +2,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 import gettext
 
-_ = lambda a : gettext.dgettext("ibus-hangul", a)
+_ = lambda a : gettext.dgettext("ibus-hangul-jis", a)
 
 class KeyCaptureDialog ():
     def __init__ (self, title, parent):

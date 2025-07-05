@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="inputmethod">
+  <id>org.freedesktop.ibus.engine.hanguljis</id>
+  <name>ibus-hangul-jis</name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2</project_license>
+  <summary>Hangul engine for IBus compatible with JIS layout keyboard</summary>
+  <description>
+    <p>IBus-Hangul-JIS is a Korean input method engine for IBus compatible with JIS layout keyboard.</p>
+  </description>
+  <project_group>IBus</project_group>
+  <url type="homepage">https://github.com/RivMt/ibus-hangul-jis</url>
+  <url type="bugtracker">https://github.com/RivMt/ibus-hangul-jis/issues</url>
+  <translation type="gettext">ibus-hangul-jis</translation>
+</component>

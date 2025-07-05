@@ -79,23 +79,23 @@ register_ibus_engine ()
                       G_CALLBACK (create_engine_cb), NULL);
 
     component = ibus_component_new (
-            "org.freedesktop.IBus.HangulTest",
-            "Hangul Engine Test",
+            "org.freedesktop.IBus.HangulJISTest",
+            "Hangul JIS Engine Test",
             "1.5.1",
             "GPL",
             "Peng Huang <shawn.p.huang@gmail.com>",
             "https://github.com/ibus/ibus/wiki",
             "",
-            "ibus-hangul");
+            "ibus-hangul-jis");
     desc = ibus_engine_desc_new (
-            "hangultest",
-            "Hangul Test",
-            "Hangul Test",
+            "hanguljistest",
+            "Hangul JIS Test",
+            "Hangul JIS Test",
             "en",
             "GPL",
             "Peng Huang <shawn.p.huang@gmail.com>",
-            "ibus-hangul",
-            "us");
+            "ibus-hangul-jis",
+            "jp");
     ibus_component_add_engine (component, desc);
     ibus_bus_register_component (m_bus, component);
 

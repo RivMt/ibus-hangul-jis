@@ -397,8 +397,7 @@ ibus_hangul_init (IBusBus *bus)
     symbol_table = hanja_table_load (IBUSHANGUL_DATADIR "/data/symbol.txt");
 
     check_ibus_version ();
-
-    settings_hangul = g_settings_new ("org.freedesktop.ibus.engine.hangul");
+    settings_hangul = g_settings_new ("org.freedesktop.ibus.engine.hanguljis");
     settings_panel = g_settings_new ("org.freedesktop.ibus.panel");
 
     hangul_keyboard = g_string_new_len (NULL, 8);
@@ -503,7 +502,7 @@ ibus_hangul_init (IBusBus *bus)
         g_clear_pointer (&value, g_variant_unref);
     }
 
-    keymap = ibus_keymap_get("us");
+    keymap = ibus_keymap_get("jp");
     use_client_commit = check_client_commit ();
 
     g_debug ("init");
@@ -1778,7 +1777,7 @@ ibus_hangul_engine_property_activate (IBusEngine    *engine,
         GError *error = NULL;
         gchar *argv[2] = { NULL, };
 
-        argv[0] = "ibus-setup-hangul";
+        argv[0] = "ibus-setup-hangul-jis";
         argv[1] = NULL;
         g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
     } else if (strcmp(prop_name, "InputMode") == 0) {
@@ -1930,7 +1929,7 @@ settings_changed (GSettings    *settings,
     g_object_get_property (G_OBJECT (settings), "schema-id", &schema_value);
     schema_id = g_value_get_string (&schema_value);
     value = g_settings_get_value (settings, key);
-    if (strcmp (schema_id, "org.freedesktop.ibus.engine.hangul") == 0) {
+    if (strcmp (schema_id, "org.freedesktop.ibus.engine.hanguljis") == 0) {
         if (strcmp(key, "hangul-keyboard") == 0) {
             const gchar *str = g_variant_get_string(value, NULL);
             g_string_assign (hangul_keyboard, str);

@@ -20,7 +20,7 @@
 # Boston, MA  02111-1307  USA
 
 schemas_DATA = \
-	org.freedesktop.ibus.engine.hangul.gschema.xml
+	org.freedesktop.ibus.engine.hanguljis.gschema.xml
 	$(NULL)
 
 schemasdir = $(datadir)/glib-2.0/schemas
@@ -29,9 +29,9 @@ symboltable_DATA = \
 	symbol.txt \
 	$(NULL)
 
-symboltabledir = $(datadir)/ibus-hangul/data
+symboltabledir = $(datadir)/ibus-hangul-jis/data
 
-appstream_in_files = org.freedesktop.ibus.engine.hangul.metainfo.xml.in
+appstream_in_files = org.freedesktop.ibus.engine.hanguljis.metainfo.xml.in
 appstream_files = $(appstream_in_files:.xml.in=.xml)
 appstream_DATA = $(appstream_files)
 appstreamdir=$(datadir)/metainfo

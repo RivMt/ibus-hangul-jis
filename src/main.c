@@ -82,30 +82,30 @@ start_component (void)
 
     ibus_hangul_init (bus);
 
-    component = ibus_component_new ("org.freedesktop.IBus.Hangul",
+    component = ibus_component_new ("org.freedesktop.IBus.HangulJIS",
                                     N_("Korean input method"),
                                     "0.1.0",
                                     "GPL",
                                     "Peng Huang <shawn.p.huang@gmail.com>",
                                     "https://github.com/libhangul/ibus-hangul",
                                     "",
-                                    "ibus-hangul");
+                                    "ibus-hangul-jis");
     ibus_component_add_engine (component,
-                               ibus_engine_desc_new ("hangul",
+                               ibus_engine_desc_new ("hangul-jis",
                                                      N_("Korean Input Method"),
                                                      N_("Korean Input Method"),
                                                      "ko",
                                                      "GPL",
                                                      "Peng Huang <shawn.p.huang@gmail.com>",
                                                      PKGDATADIR"/icon/ibus-hangul.svg",
-                                                     "us"));
+                                                     "jp"));
 
     factory = ibus_factory_new (ibus_bus_get_connection (bus));
 
-    ibus_factory_add_engine (factory, "hangul", IBUS_TYPE_HANGUL_ENGINE);
+    ibus_factory_add_engine (factory, "hangul-jis", IBUS_TYPE_HANGUL_ENGINE);
 
     if (ibus) {
-        ibus_bus_request_name (bus, "org.freedesktop.IBus.Hangul", 0);
+        ibus_bus_request_name (bus, "org.freedesktop.IBus.HangulJIS", 0);
     }
     else {
         ibus_bus_register_component (bus, component);

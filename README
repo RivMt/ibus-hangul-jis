@@ -1,18 +1,21 @@
-ibus-hangul
+ibus-hangul-jis
 -----------
 
-ibus-hangul is a Korean input method engine for IBus.
+This project is fork of ibus-hangul.
+
+ibus-hangul-jis is a Korean input method engine for IBus compatible with JIS layout keyboard.
 
 The official web site is:
 
     ibus: https://github.com/ibus/ibus/wiki
     ibus-hangul: https://github.com/libhangul/ibus-hangul/wiki
+    ibus-hangul-jis: https://github.com/RivMt/ibus-hangul-jis
 
 
 Installation
 ------------
 
-ibus-hangul requires ibus.
+ibus-hangul-jis requires ibus.
 
 Install procedure:
  $ ./configure
@@ -23,10 +26,10 @@ Install procedure:
 Bug report
 ----------
 
-https://github.com/libhangul/ibus-hangul/issues
+https://github.com/RivMt/ibus-hangul-jis/issues
 
 
 Download
 --------
 
-https://github.com/libhangul/ibus-hangul/releases
+https://github.com/RivMt/ibus-hangul-jis/releases

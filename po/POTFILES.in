@@ -1,7 +1,7 @@
-data/org.freedesktop.ibus.engine.hangul.metainfo.xml.in
+data/org.freedesktop.ibus.engine.hanguljis.metainfo.xml.in
 setup/keycapturedialog.py
 setup/main.py
-setup/ibus-setup-hangul.desktop.in
+setup/ibus-setup-hangul-jis.desktop.in
 setup/setup.ui
 src/engine.c
 src/main.c

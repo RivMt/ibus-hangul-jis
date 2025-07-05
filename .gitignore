@@ -4,6 +4,7 @@
 *.loT
 *.o
 *.so
+*.a
 *~
 tags
 out
@@ -33,15 +34,16 @@ ltmain.sh
 missing
 stamp-h1
 py-compile
-ibus-hangul*.tar.*
-ibus-hangul.spec
+ibus-hangul-jis*.tar.*
+ibus-hangul-jis.spec
+test-driver
 
 # vim temp backup file
 .*.swp
 
 # files for data
-data/org.freedesktop.ibus.engine.hangul.metainfo.xml
-data/org.freedesktop.ibus.engine.hangul.metainfo.xml.h
+data/org.freedesktop.ibus.engine.hanguljis.metainfo.xml
+data/org.freedesktop.ibus.engine.hanguljis.metainfo.xml.h
 
 # files for po
 po/*.gmo
@@ -51,13 +53,17 @@ po/stamp-it
 
 # files for setup
 setup/config.py
-setup/ibus-setup-hangul
+setup/ibus-setup-hangul-jis
+setup/ibus-setup-hangul-jis.desktop
 
 # files for engine
 src/test.sh
-src/hangul.xml
-src/hangul.xml.in
-src/ibus-engine-hangul
+src/hanguljis.xml
+src/hanguljis.xml.in
+src/ibus-engine-hangul-jis
+
+# files for tests
+tests/ibus-hangul-jis
 
 # VS Code
 .vscode/
