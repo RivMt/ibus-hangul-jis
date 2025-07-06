@@ -18,7 +18,7 @@ Installation
 ibus-hangul-jis requires ibus.
 
 Install procedure:
- $ ./configure
+ $ ./configure --prefix=/usr
  $ make
  $ make install
 
